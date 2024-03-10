@@ -1,8 +1,8 @@
 import sys
 from api import create_client_instance, make_request
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QWidget, QVBoxLayout, QTextEdit, QPushButton, \
-    QHBoxLayout, QListWidget, QListWidgetItem, QGridLayout
+from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QWidget, QTextEdit, QPushButton, QListWidget, \
+    QListWidgetItem, QGridLayout
 
 
 class MainWindow(QMainWindow):
@@ -113,7 +113,7 @@ class MainWindow(QMainWindow):
             {"role": "user", "content": query_text},
         ]
         temp = 0
-        resp = make_request(client, model="gpt-3.5-turbo", messages=messages, temperature=temp)
+        resp = make_request(client, model="gpt-4", messages=messages, temperature=temp)
         # resp = "Echo: " + query_text
 
         self.history.append((query_text, resp))
@@ -127,6 +127,7 @@ class MainWindow(QMainWindow):
         self.text_edit.clear()
 
     def update_conv_display(self):
+        """Docstring placeholder"""
         # clear display
         self.conv_history_disp.clear()
 
