@@ -9,7 +9,6 @@ load_dotenv()
 def create_client_instance():
     """Get .env key for the api, create client object with OpenAI and return the client object"""
     api_key = os.getenv("OPENAI_KEY")
-    print(api_key)
     client = OpenAI(api_key=api_key)
     return client
 
